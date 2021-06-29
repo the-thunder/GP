@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:login_application_1/login_screen_3.dart';
 import 'package:login_application_1/misc/slide_list_view.dart';
 
-void main() => runApp(new MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'Flutter Login Screen 1',
+      title: 'Q&A App',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
